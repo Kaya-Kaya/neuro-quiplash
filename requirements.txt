@@ -1,2 +1,3 @@
 selenium~=4.27.1
 neuro_api~=1.0.0
+trio~=0.28.0
