@@ -5,7 +5,7 @@ This is integration to let Neuro-sama play Quiplash 2 from the Jackbox Party Pac
 ## Installation
 > [!NOTE]
 > Creating a virtual environment is recommended to avoid package version conflicts.
-1. Download the repository.
+1. [Download](https://github.com/Kaya-Kaya/neuro-quiplash/archive/refs/tags/Latest.zip) the repository.
 2. Navigate into the repository directory. ```cd neuro-quiplash```
 3. Create a virtual environment. (optional)
    * If you are using conda, this can be done with the command ```conda create -n neuro-quiplash python=3.12```
