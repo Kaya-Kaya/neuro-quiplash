@@ -1,6 +1,6 @@
 # Neuro Integration for Quiplash 2
  
-This is integration to let Neuro-sama play Quiplash 2 from the Jackbox Party Pack 3 using the [Python SDK](https://github.com/CoolCat467/Neuro-API) for the [Neuro API](https://github.com/VedalAI/neuro-game-sdk). It works by using Selenium to send Neuro's responses to the [jackbox.tv](https://jackbox.tv/) website.
+This is integration to let [Neuro-sama](https://www.bloomberg.com/news/newsletters/2023-06-16/neuro-sama-an-ai-twitch-influencer-plays-minecraft-sings-karaoke-loves-art) play Quiplash 2 from the [Jackbox Party Pack 3](https://store.steampowered.com/app/434170/The_Jackbox_Party_Pack_3/) using the [Python SDK](https://github.com/CoolCat467/Neuro-API) for the [Neuro API](https://github.com/VedalAI/neuro-game-sdk). It works by using Selenium to send Neuro's responses to the [jackbox.tv](https://jackbox.tv/) website.
 
 ## Installation
 > [!NOTE]
