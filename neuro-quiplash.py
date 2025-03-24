@@ -22,10 +22,12 @@ if sys.version_info < (3, 11):
 
 MAX_NAME_LENGTH = 12
 MAX_ANSWER_LENGTH = 45
+WEBDRIVER_TIMEOUT = 10
+BASE_URL = "https://jackbox.tv/"
+WEBSOCKET_ENV_VAR = "NEURO_SDK_WS_URL"
 
 async def run() -> None:
-    url = "https://jackbox.tv/"
-    websocket_url = os.environ.get("NEURO_SDK_WS_URL", "ws://localhost:8000")
+    websocket_url = os.environ.get(WEBSOCKET_ENV_VAR, "ws://localhost:8000")
 
     async with trio.open_nursery(strict_exception_groups=True) as nursery:
         manager = ExternalRaiseManager("name", nursery)
@@ -157,20 +159,20 @@ async def run() -> None:
         driver = webdriver.Chrome()
 
         # Open the website
-        driver.get(url)
+        driver.get(BASE_URL)
 
         try:
-            roomcode_box = WebDriverWait(driver, 10).until(
+            roomcode_box = WebDriverWait(driver, WEBDRIVER_TIMEOUT).until(
                 EC.presence_of_element_located((By.ID, 'roomcode'))
             )
             roomcode_box.send_keys(roomcode)
 
-            name_box = WebDriverWait(driver, 10).until(
+            name_box = WebDriverWait(driver, WEBDRIVER_TIMEOUT).until(
                 EC.presence_of_element_located((By.ID, 'username'))
             )
             name_box.send_keys(username)
 
-            play_button = WebDriverWait(driver, 10).until(
+            play_button = WebDriverWait(driver, WEBDRIVER_TIMEOUT).until(
                 EC.element_to_be_clickable((By.ID, 'button-join'))
             )
             play_button.click()
@@ -217,12 +219,12 @@ async def run() -> None:
                     await neuro_played.wait()
                     neuro_played = trio.Event()
 
-                    answer_box = WebDriverWait(state_answer_question, 10).until(
+                    answer_box = WebDriverWait(state_answer_question, WEBDRIVER_TIMEOUT).until(
                         EC.presence_of_element_located((By.ID, "quiplash-answer-input"))
                     )
                     answer_box.send_keys(response)
 
-                    submit_button = WebDriverWait(state_answer_question, 10).until(
+                    submit_button = WebDriverWait(state_answer_question, WEBDRIVER_TIMEOUT).until(
                         EC.element_to_be_clickable((By.ID, "quiplash-submit-answer"))
                     )
                     submit_button.click()
@@ -240,7 +242,7 @@ async def run() -> None:
                     if vote_text != "Wait for the other players!":
                         question_text = state_vote.find_element(By.ID, "question-text").text
 
-                        vote_buttons = WebDriverWait(state_vote, 10).until(
+                        vote_buttons = WebDriverWait(state_vote, WEBDRIVER_TIMEOUT).until(
                             EC.presence_of_all_elements_located((By.CLASS_NAME, "quiplash2-vote-button"))
                         )
 
