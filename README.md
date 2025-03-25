@@ -5,7 +5,7 @@ This is integration to let [Neuro-sama](https://www.bloomberg.com/news/newslette
 ## Installation
 > [!NOTE]
 > Creating a virtual environment is recommended to avoid package version conflicts.
-1. [Download](https://github.com/Kaya-Kaya/neuro-quiplash/archive/refs/tags/Latest.zip) and extract the repository.
+1. [Download](https://github.com/Kaya-Kaya/neuro-quiplash/archive/refs/heads/main.zip) and extract the repository.
 2. Navigate into the repository directory.
 3. Create a virtual environment. (optional)
    * If you are using conda, this can be done with the command ```conda create -n neuro-quiplash python=3.12```
