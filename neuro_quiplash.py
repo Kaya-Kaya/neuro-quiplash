@@ -1,6 +1,7 @@
 """
-Example Game - NeuroQuiplash
-This module implements asynchronous interactions for a game using Selenium 
+Quiplash 2 Neuro Integration
+
+This module implements Neuro integration for Quiplash 2 using Selenium 
 (web browser automation), the Trio async library, and the Neuro API.
 """
 

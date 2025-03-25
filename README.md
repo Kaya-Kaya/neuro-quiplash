@@ -20,5 +20,5 @@ This is integration to let [Neuro-sama](https://www.bloomberg.com/news/newslette
 1. Navigate into the repository directory. ```cd neuro-quiplash-Latest```
 2. Activate the virtual environment. (skip if not using a virtual environment)
    * If using conda, ```conda activate neuro-quiplash```
-3. Run the program. ```python neuro-quiplash.py```
+3. Run the program. ```python neuro_quiplash.py```
 4. Enter in the room code into the prompt.
